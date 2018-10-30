@@ -81,6 +81,8 @@ void setup()
   // designed to interface directly with RC Receivers  
   servoThrottle.attach(DC_MOTOR_PWM_SIG);
   servoSteering.attach(SERVO_SIG);
+  //calibration of Servo
+  servoSteering.writeMicroseconds(SERVO_SIG, 1500 + DEFAULT_ANGLE_CALIBRATION);
   //servoAux.attach(AUX_OUT_PIN);
 
   // using the PinChangeInt library, attach the interrupts
@@ -167,6 +169,8 @@ void loop()
   {
     if(servoSteering.readMicroseconds() != unSteeringIn)
     {
+      /*FIXME*/
+      unSteeringIn = map(unSteeringIn, 1000, 2000, 1500 + DEFAULT_ANGLE_CALIBRATION, 1700 + DEFAULT_ANGLE_CALIBRATION);
       servoSteering.writeMicroseconds(unSteeringIn);
     }
   }
