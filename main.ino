@@ -175,7 +175,7 @@ void loop()
   {
     if(servoAux.readMicroseconds() != unAuxIn)
     {
-      servoAux.writeMicroseconds(unAuxIn);
+      //servoAux.writeMicroseconds(unAuxIn);
     }
   }
   
