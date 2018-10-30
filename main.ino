@@ -170,9 +170,10 @@ void loop()
     if(servoSteering.readMicroseconds() != unSteeringIn)
     {
       /*FIXME*/
-      Serial.println("unSteeringIn : %us", unSteeringIn);
+      Serial.print("Before unSteeringIn : %us ", unSteeringIn);
       unSteeringIn = map(unSteeringIn, 1000, 2000, 1500 + DEFAULT_ANGLE_CALIBRATION, 1700 + DEFAULT_ANGLE_CALIBRATION);
-      servoSteering.writeMicroseconds(unSteeringIn);
+      Serial.println("After unSteeringIn : %us", unSteeringIn);
+      //servoSteering.writeMicroseconds(unSteeringIn);
     }
   }
   
