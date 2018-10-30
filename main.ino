@@ -1,0 +1,17 @@
+#define FS_GR3E_PWM_CH1_SERVO D7
+#define FS_GR3E_PWM_CH2_DC_MOTOR D6
+#ifdef FS_GR3E_PWM_CH2_DC_MOTOR
+  #define FS_GR3E_PWM_CH2_ESC FS_GR3E_PWM_CH2_DC_MOTOR
+#elif
+  #define FS_GR3E_PWM_CH2_ESC D6
+#endif
+#define FS_GR3E_PWM_CH3_EX D5
+
+#define SERVO_SIG D4
+#define DC_MOTOR_PWM_SIG D3
+#ifdef DC_MOTOR_PWM_SIG
+  #define ESC_PWM_SIG DC_MOTOR_PWM_SIG
+#elif
+  #define ESC_PWM_SIG D3
+#endif
+
